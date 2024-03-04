@@ -30,7 +30,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="ko" suppressHydrationWarning>
 			<head />
 			<body
 				className={clsx(
@@ -49,7 +49,7 @@ export default function RootLayout({
 								isExternal
 								className="flex items-center gap-1 text-current"
 								href="https://github.com/adultlee"
-								title="nextui.org homepage"
+								title="adultlee github"
 							>
 								<span className="text-default-600">Developed by</span>
 								<p className="text-primary">Adultlee</p>
