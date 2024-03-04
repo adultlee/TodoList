@@ -14,13 +14,17 @@ async function fetchTodosApiCall() {
 }
 
 export default async function Home() {
-	const { data } = await fetchTodosApiCall();
+	const response = await fetchTodosApiCall();
 
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
 			<div className="inline-block max-w-lg text-center justify-center ">
 				<h1 className={title()}>Adultlee Todo</h1>
-				{data ? <TodosTable todos={data} /> : "데이터가 연결되지 않았습니다."}
+				{response && response.data ? (
+					<TodosTable todos={response.data} />
+				) : (
+					"데이터가 연결되지 않았습니다."
+				)}
 			</div>
 		</section>
 	);
