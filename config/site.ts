@@ -8,27 +8,35 @@ export const siteConfig = {
 			label: "Home",
 			href: "/",
 		},
-    {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    }
+		{
+			label: "todos",
+			href: "/todos",
+		},
+		{
+			label: "Docs",
+			href: "/docs",
+		},
+		{
+			label: "Pricing",
+			href: "/pricing",
+		},
+		{
+			label: "Blog",
+			href: "/blog",
+		},
+		{
+			label: "About",
+			href: "/about",
+		},
 	],
 	navMenuItems: [
 		{
 			label: "Profile",
 			href: "/profile",
+		},
+		{
+			label: "TodoList",
+			href: "/TodoList",
 		},
 		{
 			label: "Dashboard",
@@ -60,10 +68,10 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: "https://github.com/nextui-org/nextui",
+		github: "https://github.com/adultlee",
 		twitter: "https://twitter.com/getnextui",
 		docs: "https://nextui.org",
 		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
+		sponsor: "https://patreon.com/jrgarciadev",
 	},
 };
