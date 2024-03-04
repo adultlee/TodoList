@@ -73,6 +73,8 @@ export default function TodosTable({ todos }: { todos: Todo[] }) {
 
 	const router = useRouter();
 
+	const PASSWORD = window?.localStorage.getItem("pass");
+
 	const addTodoHandler = async () => {
 		if (newTodoInput.length === 0) {
 			return;
@@ -180,38 +182,53 @@ export default function TodosTable({ todos }: { todos: Todo[] }) {
 															/>
 														</Button>
 													</DropdownTrigger>
-													<DropdownMenu>
-														<DropdownItem
-															key="detail"
-															onPress={() => {
-																onOpen();
-																setCurTodo(todo);
-																setStatus("detail");
-															}}
-														>
-															View
-														</DropdownItem>
-														<DropdownItem
-															key="edit"
-															onPress={() => {
-																onOpen();
-																setCurTodo(todo);
-																setStatus("edit");
-															}}
-														>
-															Edit
-														</DropdownItem>
-														<DropdownItem
-															key="delete"
-															onPress={() => {
-																onOpen();
-																setCurTodo(todo);
-																setStatus("delete");
-															}}
-														>
-															Delete
-														</DropdownItem>
-													</DropdownMenu>
+													{PASSWORD === process.env.NEXT_PUBLIC_PASS ? (
+														<DropdownMenu>
+															<DropdownItem
+																key="detail"
+																onPress={() => {
+																	onOpen();
+																	setCurTodo(todo);
+																	setStatus("detail");
+																}}
+															>
+																View
+															</DropdownItem>
+															<DropdownItem
+																key="edit"
+																onPress={() => {
+																	onOpen();
+																	setCurTodo(todo);
+																	setStatus("edit");
+																}}
+															>
+																Edit
+															</DropdownItem>
+															<DropdownItem
+																key="delete"
+																onPress={() => {
+																	onOpen();
+																	setCurTodo(todo);
+																	setStatus("delete");
+																}}
+															>
+																Delete
+															</DropdownItem>
+														</DropdownMenu>
+													) : (
+														<DropdownMenu>
+															<DropdownItem
+																key="detail"
+																onPress={() => {
+																	onOpen();
+																	setCurTodo(todo);
+																	setStatus("detail");
+																}}
+															>
+																View
+															</DropdownItem>
+														</DropdownMenu>
+													)}
 												</Dropdown>
 											</div>
 										</TableCell>
