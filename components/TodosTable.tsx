@@ -33,7 +33,19 @@ import { Todo } from "@/types";
 import { useRouter } from "next/navigation";
 import CustomModal from "./Modal";
 
-const VerticalDotsIcon = ({ size = 24, width, height, ...props }) => (
+interface VerticalDotsIconProps {
+	size?: number;
+	width?: number;
+	height?: number;
+	[key: string]: any; // 나머지 props에 대한 타입을 정의, 필요한 경우 더 구체적인 타입으로 변경
+}
+
+const VerticalDotsIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: VerticalDotsIconProps) => (
 	<svg
 		aria-hidden="true"
 		fill="none"
