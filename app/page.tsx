@@ -2,7 +2,7 @@ import { title } from "@/components/primitives";
 import TodosTable from "@/components/TodosTable";
 
 async function fetchTodosApiCall() {
-	const data = await fetch(`${process.env.BASE_URL}/api/todos/`, {
+	const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/todos/`, {
 		cache: "no-store",
 	});
 
